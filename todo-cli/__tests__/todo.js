@@ -22,7 +22,7 @@ describe("Todolist Test Suite",() =>{
             }
         );
         expect(all.length).toBe(todoItemsCount + 1);
-    });
+    })
 
     test("Should mark a todo as complete", () =>{
         expect(all[0].completed).toBe(false);
@@ -36,6 +36,7 @@ describe("Todolist Test Suite",() =>{
     });
     test("Should retrieve due later items", () => {
     });
+
 })
 
 // const db = require("../models");
