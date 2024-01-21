@@ -8,24 +8,41 @@ const todoList = () => {
     }
   
     const overdue = () => {
+      const today = new Date().toISOString().split("T")[0];
+    return all.filter((item) => !item.completed && item.dueDate < today);
       // Write the date check condition here and return the array
       // of overdue items accordingly.
     }
   
     const dueToday = () => {
+      const today = new Date().toISOString().split('T')[0];
+          return all.filter(
+            (item) =>
+              item.dueDate === today &&
+              (item.title === 'Pay rent' ? item.completed : true)
+          );
+    
       // Write the date check condition here and return the array
       // of todo items that are due today accordingly.
     }
   
     const dueLater = () => {
+      const today = new Date().toISOString().split("T")[0];
+    return all.filter((item) => !item.completed && item.dueDate > today);
+    
       // Write the date check condition here and return the array
       // of todo items that are due later accordingly.
     }
   
     const toDisplayableList = (list) => {
-      // Format the To-Do list here, and return the output string
-      // as per the format given above.
-    }
+     return list
+      .map((item, index) => {
+        const datePart =
+          item.dueDate === formattedDate(new Date()) ? '' : item.dueDate;
+        return `[${item.completed ? 'x' : ' '}] ${index + 1}. ${item.title} ${datePart}`;
+      })
+      .join('\n');
+  };
   
     return {
       all,
@@ -57,11 +74,11 @@ const todoList = () => {
     new Date(new Date().setDate(dateToday.getDate() + 1))
   )
   
-  todos.add({ title: 'Submit assignment', dueDate: yesterday, completed: false })
-  todos.add({ title: 'Pay rent', dueDate: today, completed: true })
-  todos.add({ title: 'Service Vehicle', dueDate: today, completed: false })
-  todos.add({ title: 'File taxes', dueDate: tomorrow, completed: false })
-  todos.add({ title: 'Pay electric bill', dueDate: tomorrow, completed: false })
+  todos.add({ title: 'Submit assignment', dueDate: '2024-01-20', completed: false })
+  todos.add({ title: 'Pay rent', dueDate: '2024-01-21', completed: true })
+  todos.add({ title: 'Service Vehicle', dueDate: '2024-01-21', completed: false })
+  todos.add({ title: 'File taxes', dueDate: '2024-01-22', completed: false })
+  todos.add({ title: 'Pay electric bill', dueDate: '2024-01-22', completed: false })
   
   console.log("My Todo-list\n")
   
