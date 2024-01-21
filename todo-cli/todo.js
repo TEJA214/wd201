@@ -39,7 +39,7 @@ const todoList = () => {
       .map((item, index) => {
         const datePart =
           item.dueDate === formattedDate(new Date()) ? '' : item.dueDate;
-        return `[${item.completed ? 'x' : ' '}] ${index + 1}. ${item.title} ${datePart}`;
+        return `[${item.completed ? 'x' : ' '}]  ${item.title} ${datePart}`;
       })
       .join('\n');
   };
