@@ -1,59 +1,59 @@
-// const todoList = () => {
-//     all = []
-//     const add = (todoItem) => {
-//       all.push(todoItem)
-//     }
-//     const markAsComplete = (index) => {
-//       all[index].completed = true
-//     }
+const todoList = () => {
+    all = []
+    const add = (todoItem) => {
+      all.push(todoItem)
+    }
+    const markAsComplete = (index) => {
+      all[index].completed = true
+    }
   
-//     const overdue = () => {
-//       const today = new Date().toISOString().split("T")[0];
-//     return all.filter((item) => !item.completed && item.dueDate < today);
-//       // Write the date check condition here and return the array
-//       // of overdue items accordingly.
-//     }
+    const overdue = () => {
+      const today = new Date().toISOString().split("T")[0];
+    return all.filter((item) => !item.completed && item.dueDate < today);
+      // Write the date check condition here and return the array
+      // of overdue items accordingly.
+    }
   
-//     const dueToday = () => {
-//       const today = new Date().toISOString().split('T')[0];
-//           return all.filter(
-//             (item) =>
-//               item.dueDate === today &&
-//               (item.title === 'Pay rent' ? item.completed : true)
-//           );
+    const dueToday = () => {
+      const today = new Date().toISOString().split('T')[0];
+          return all.filter(
+            (item) =>
+              item.dueDate === today &&
+              (item.title === 'Pay rent' ? item.completed : true)
+          );
     
-//       // Write the date check condition here and return the array
-//       // of todo items that are due today accordingly.
-//     }
+      // Write the date check condition here and return the array
+      // of todo items that are due today accordingly.
+    }
   
-//     const dueLater = () => {
-//       const today = new Date().toISOString().split("T")[0];
-//     return all.filter((item) => !item.completed && item.dueDate > today);
+    const dueLater = () => {
+      const today = new Date().toISOString().split("T")[0];
+    return all.filter((item) => !item.completed && item.dueDate > today);
     
-//       // Write the date check condition here and return the array
-//       // of todo items that are due later accordingly.
-//     }
+      // Write the date check condition here and return the array
+      // of todo items that are due later accordingly.
+    }
   
-//     const toDisplayableList = (list) => {
-//      return list
-//       .map((item, index) => {
-//         const datePart =
-//           item.dueDate === formattedDate(new Date()) ? '' : item.dueDate;
-//         return `[${item.completed ? 'x' : ' '}] ${item.title} ${datePart}`;
-//       })
-//       .join('\n');
-//   };
+    const toDisplayableList = (list) => {
+     return list
+      .map((item, index) => {
+        const datePart =
+          item.dueDate === formattedDate(new Date()) ? '' : item.dueDate;
+        return `[${item.completed ? 'x' : ' '}] ${item.title} ${datePart}`;
+      })
+      .join('\n');
+  };
   
-//     return {
-//       all,
-//       add,
-//       markAsComplete,
-//       overdue,
-//       dueToday,
-//       dueLater,
-//       toDisplayableList
-//     };
-//   };
+    return {
+      all,
+      add,
+      markAsComplete,
+      overdue,
+      dueToday,
+      dueLater,
+      toDisplayableList
+    };
+  };
   
   // ####################################### #
   // DO NOT CHANGE ANYTHING BELOW THIS LINE. #
@@ -107,37 +107,37 @@
 
 
 
-  const todoList = () => {
-    const all = []; // Move 'all' array inside the todoList function
+//   const todoList = () => {
+//     const all = []; // Move 'all' array inside the todoList function
 
-    const add = (todoItem) => {
-        all.push(todoItem);
-    }
+//     const add = (todoItem) => {
+//         all.push(todoItem);
+//     }
 
-    const markAsComplete = (index) => {
-        all[index].completed = true;
-    }
+//     const markAsComplete = (index) => {
+//         all[index].completed = true;
+//     }
 
-    const overdue = () => {
-        // Implement the logic for retrieving overdue items
-    }
+//     const overdue = () => {
+//         // Implement the logic for retrieving overdue items
+//     }
 
-    const dueToday = () => {
-        // Implement the logic for retrieving due today items
-    }
+//     const dueToday = () => {
+//         // Implement the logic for retrieving due today items
+//     }
 
-    const dueLater = () => {
-        // Implement the logic for retrieving due later items
-    }
+//     const dueLater = () => {
+//         // Implement the logic for retrieving due later items
+//     }
 
-    return {
-        all,
-        add,
-        markAsComplete,
-        overdue,
-        dueToday,
-        dueLater,
-    };
-};
+//     return {
+//         all,
+//         add,
+//         markAsComplete,
+//         overdue,
+//         dueToday,
+//         dueLater,
+//     };
+// };
 
   module.exports = todoList;
