@@ -1,30 +1,30 @@
-// // // // // const todoList = require('../todo');
+const todoList = require('../todo');
 
-// // // // // const {all, markAsComplete, add} = todoList();
-// // // // // describe("Todolist Test Suite", () => {
-// // // // //     beforeAll(() => {
-// // // // //     add({
-// // // // //             title: "new todo",
-// // // // //             completed:false,
-// // // // //             dueDate: new Date().toLocalDataString("en-CA")
-// // // // //         });
-// // // // //       });
-// // // // //         test ("Should add new todo", () => {
-// // // // //           const todoItemsCount = all.length;
-// // // // //           add({
-// // // // //             title: "Test todo",
-// // // // //             completed:false,
-// // // // //             dueDate: new Date().toLocalDataString("en-CA")
-// // // // //         });
-// // // // //     expect(all.length).toBe(todoItemsCount + 1);
-// // // // //  });
+const {all, markAsComplete, add} = todoList();
+describe("Todolist Test Suite", () => {
+    beforeAll(() => {
+    add({
+            title: "new todo",
+            completed:false,
+            dueDate: new Date().toLocalDataString("en-CA")
+        });
+      });
+        test ("Should add new todo", () => {
+          const todoItemsCount = all.length;
+          add({
+            title: "Test todo",
+            completed:false,
+            dueDate: new Date().toLocalDataString("en-CA")
+        });
+    expect(all.length).toBe(todoItemsCount + 1);
+ });
 
-// // // // //   test("Should mark a todo as complete",() => {
-// // // // //     expect(all[0].completed).toBe(false);
-// // // // //     markAsComplete(0);
-// // // // //     expect(all[0].completed).toBe(true);
-// // // // //   });
-// // // // // });
+  test("Should mark a todo as complete",() => {
+    expect(all[0].completed).toBe(false);
+    markAsComplete(0);
+    expect(all[0].completed).toBe(true);
+  });
+});
 
 
 
@@ -410,61 +410,64 @@
 //   });
 // });
 
-const { todoList } = require('../todo');
 
-describe("TodoList Test Suite", () => {
-  let { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 
-  beforeAll(() => {
-    // Add a sample todo with a due date
-    add({
-      title: "Sample Todo",
-      completed: false,
-      dueDate: new Date().toLocaleDateString("en-CA"),
-    });
-  });
 
-  test("Should add new todo", () => {
-    const todoItemsCount = all.length;
-    add({
-      title: "Test todo",
-      completed: false,
-      dueDate: new Date().toLocaleDateString("en-CA"),
-    });
-    expect(all.length).toBe(todoItemsCount + 1);
-  });
+// const { todoList } = require('../todo');
 
-  test("Should mark a todo as complete", () => {
-    expect(all[0].completed).toBe(false);
-    markAsComplete(0);
-    expect(all[0].completed).toBe(true);
-  });
+// describe("TodoList Test Suite", () => {
+//   let { all, markAsComplete, add, overdue, dueToday, dueLater } = todoList();
 
-  // Test to retrieve overdue items
-  test("Should retrieve overdue items", () => {
-    const overdueItems = overdue();
-    expect(overdueItems.length).toBe(1); // Modify based on your logic
-    expect(overdueItems[0].title).toBe("Sample Todo"); // Assuming the sample todo is overdue
-  });
+//   beforeAll(() => {
+//     // Add a sample todo with a due date
+//     add({
+//       title: "Sample Todo",
+//       completed: false,
+//       dueDate: new Date().toLocaleDateString("en-CA"),
+//     });
+//   });
 
-  // Test to retrieve due today items
-  test("Should retrieve due today items", () => {
-    const todayItems = dueToday();
-    expect(todayItems.length).toBe(1); // There is one sample todo due today
-    expect(todayItems[0].title).toBe("Sample Todo"); // Assuming the sample todo is due today
-  });
+//   test("Should add new todo", () => {
+//     const todoItemsCount = all.length;
+//     add({
+//       title: "Test todo",
+//       completed: false,
+//       dueDate: new Date().toLocaleDateString("en-CA"),
+//     });
+//     expect(all.length).toBe(todoItemsCount + 1);
+//   });
 
-  // Test to retrieve due later items
-  test("Should retrieve due later items", () => {
-    // Add a new todo with a future due date
-    add({
-      title: "Future Todo",
-      completed: false,
-      dueDate: new Date(new Date().getTime() + 86400000 * 3).toLocaleDateString("en-CA"), // 3 days later
-    });
+//   test("Should mark a todo as complete", () => {
+//     expect(all[0].completed).toBe(false);
+//     markAsComplete(0);
+//     expect(all[0].completed).toBe(true);
+//   });
 
-    const laterItems = dueLater();
-    expect(laterItems.length).toBe(1); // Assuming there is one todo due later
-    expect(laterItems[0].title).toBe("Future Todo"); // Modify based on your logic
-  });
-});
+//   // Test to retrieve overdue items
+//   test("Should retrieve overdue items", () => {
+//     const overdueItems = overdue();
+//     expect(overdueItems.length).toBe(1); // Modify based on your logic
+//     expect(overdueItems[0].title).toBe("Sample Todo"); // Assuming the sample todo is overdue
+//   });
+
+//   // Test to retrieve due today items
+//   test("Should retrieve due today items", () => {
+//     const todayItems = dueToday();
+//     expect(todayItems.length).toBe(1); // There is one sample todo due today
+//     expect(todayItems[0].title).toBe("Sample Todo"); // Assuming the sample todo is due today
+//   });
+
+//   // Test to retrieve due later items
+//   test("Should retrieve due later items", () => {
+//     // Add a new todo with a future due date
+//     add({
+//       title: "Future Todo",
+//       completed: false,
+//       dueDate: new Date(new Date().getTime() + 86400000 * 3).toLocaleDateString("en-CA"), // 3 days later
+//     });
+
+//     const laterItems = dueLater();
+//     expect(laterItems.length).toBe(1); // Assuming there is one todo due later
+//     expect(laterItems[0].title).toBe("Future Todo"); // Modify based on your logic
+//   });
+// });
