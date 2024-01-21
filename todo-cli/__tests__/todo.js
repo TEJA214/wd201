@@ -29,6 +29,12 @@ describe("Todolist Test Suite",() =>{
         markAsComplete(0);
         expect(all[0].completed).toBe(true);
     })
+    test("Should retrieve overdue items", () => {
+    });
+    test("Should retrieve due today items", () => {
+    });
+    test("Should retrieve due later items", () => {
+    });
 })
 
 // const db = require("../models");
