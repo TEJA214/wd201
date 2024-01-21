@@ -45,16 +45,6 @@ const todoList = require('../todo');
 
 let { markAsComplete, add, all } = todoList();
 
-beforeEach(() => {
-    // Reset the state before each test
-    all.length = 0;
-    add({
-        title: "Test todo",
-        completed: false,
-        dueDate: new Date().toLocaleDateString("en-CA")
-    });
-});
-
 test("Should add new todo", () => {
     const todoItemsCount = all.length;
     add({
