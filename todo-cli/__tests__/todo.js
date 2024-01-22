@@ -29,11 +29,22 @@ describe("Todolist Test Suite",() =>{
         markAsComplete(0);
         expect(all[0].completed).toBe(true);
     })
+
+    const overDueTodoItemsCount =overdue().length
     test("Should retrieve overdue items", () => {
     });
-    test("Should retrieve due today items", () => {
+     expect(overdue().length).toEqual(overDueTodoItemsCount+1) 
+
+     const duetodayTodoItemsCount =duetoday().length
+    test("Should retrieve duelater items", () => {
     });
-    test("Should retrieve due later items", () => {
+     expect(duetoday().length).toEqual(duetodayTodoItemsCount+1)
+
+     const duelaterTodoItemsCount =duelater().length
+    test("Should retrieve duelater items", () => {
     });
+     expect(duelater().length).toEqual(duelaterTodoItemsCount+1)
 })
+
+
 
