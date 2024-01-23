@@ -1,0 +1,17 @@
+{
+    "env": {
+        "Commonjs": true,
+        "es2024": true,
+        "node": true,
+        "jest": true
+    },
+    "extends": "eslint:recommended",
+    "overrides": [
+    ],
+    "paraserOptions": {
+        "ecmaVersion": "latest"
+    },
+    "rules":{
+
+    }
+}
